@@ -2,6 +2,8 @@
 
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 
+## Overview
+
 This PHP script provides a web-based interface for browsing the contents of directories on a server. It's designed to list all files and folders within a specified base directory. The script allows users to navigate through the directory structure, with the first layer of folders being clickable to display their contents, and the second layer of folders, as well as all files, being displayed as links that can be opened in the browser.
 
 ## Features
