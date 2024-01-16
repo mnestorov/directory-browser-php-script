@@ -17,6 +17,18 @@
 $baseDirectory = '/path/to/your/directory'; // Specify the directory
 $currentDirectory = $baseDirectory;
 
+// Implementing basic authentication
+$valid_username = 'admin'; // Set your username
+$valid_password = 'password'; // Set your password
+
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
+    $_SERVER['PHP_AUTH_USER'] != $valid_username || $_SERVER['PHP_AUTH_PW'] != $valid_password) {
+    header('WWW-Authenticate: Basic realm="Secure Directory"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo 'Authentication required';
+    exit;
+}
+
 // Check for directory traversal
 if (isset($_GET['folder'])) {
     $folder = $_GET['folder'];
